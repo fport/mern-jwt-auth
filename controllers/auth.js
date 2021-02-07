@@ -1,5 +1,16 @@
-exports.login = (req, res, next) => {
-  res.send('Login Route')
+const User = require('../models/User')
+
+exports.login = async (req, res, next) => {
+  const { username, email, password } = req.body
+
+  try {
+    const user = await User.create({
+      username,
+      email,
+      password
+    })
+  } catch (error) {}
+  console.log(error)
 }
 
 exports.register = (req, res, next) => {
