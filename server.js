@@ -13,6 +13,7 @@ app.use(express.json())
 
 // connect route
 app.use('/api/auth', require('./routes/auth'))
+app.use('/api/private', require('./routes/private'))
 
 // Error Handler (Should be lasat piece of middleware)
 app.use(errorHandler)
